@@ -9,17 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let nameLabel = UILabel()
+    let emailLabel = UILabel()
+    let ageLabel = UILabel()
+    let genderLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        User.index { (users) in
+            UITabBarItem(
+            print(users)
+        }
+        
+        User.create(params: ["name": "Stark", "email": "example@email.com", "gender": 0, "age": 100]) { (user) in
+            print(user!)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
