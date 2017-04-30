@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         User.index { (users) in
-            UITabBarItem(
             print(users)
         }
         
